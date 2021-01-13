@@ -16,13 +16,13 @@ class CreateFoodTable extends Migration
         Schema::create('food', function (Blueprint $table) {
             $table->id();
 
-            $table->text('picturePath')->nullable();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->text('ingredients')->nullable();
             $table->integer('price')->nullable();
             $table->double('rate')->nullable();
             $table->string('types')->default('');
+            $table->text('picturePath')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
