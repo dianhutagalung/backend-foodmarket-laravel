@@ -13,10 +13,15 @@ class MidtransController extends Controller
     public function callback(Request $request)
     {
         // set konfigurasi midtrans
-        Config::$serverKey = config('services.midtrans.serverKey');
-        Config::$isProduction = config('services.midtrans.isProduction');
-        Config::$isSanitized = config('services.midtrans.isSanitized');
-        Config::$is3ds = config('services.midtrans.is3ds');
+        $a = Config::$serverKey = config('services.midtrans.serverKey');
+        $b = Config::$isProduction = config('services.midtrans.isProduction');
+        $c = Config::$isSanitized = config('services.midtrans.isSanitized');
+        $d = Config::$is3ds = config('services.midtrans.is3ds');
+        var_dump($a);
+        var_dump($b);
+        var_dump($c);
+        var_dump($d);
+        die;
 
         // buat instance midtrans notificaton
         $notif = new Notification();
