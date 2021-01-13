@@ -45,8 +45,7 @@ class MidtransController extends Controller
         }
         else if($status == 'settlement'){
             $transaction->status = 'SUCCESS';
-        }
-        else if($status == 'pendding'){
+        } else if ($status == 'pending') {
             $transaction->status = 'PENDING';
         }
         else if($status == 'deny'){
