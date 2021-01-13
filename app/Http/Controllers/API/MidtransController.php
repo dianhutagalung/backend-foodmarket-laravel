@@ -23,8 +23,6 @@ class MidtransController extends Controller
 
         // assign ke variable untuk memudahkan coding
         $status = $notif->transaction_status;
-        var_dump($status);
-        die;
         $type = $notif->payment_type;
         $fraud = $notif->fraud_status;
         $order_id = $notif->order_id;
