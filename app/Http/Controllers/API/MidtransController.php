@@ -13,21 +13,18 @@ class MidtransController extends Controller
     public function callback(Request $request)
     {
         // set konfigurasi midtrans
-        $a = Config::$serverKey = config('services.midtrans.serverKey');
-        $b = Config::$isProduction = config('services.midtrans.isProduction');
-        $c = Config::$isSanitized = config('services.midtrans.isSanitized');
-        $d = Config::$is3ds = config('services.midtrans.is3ds');
-        var_dump($a);
-        var_dump($b);
-        var_dump($c);
-        var_dump($d);
-        die;
+        Config::$serverKey = config('services.midtrans.serverKey');
+        Config::$isProduction = config('services.midtrans.isProduction');
+        Config::$isSanitized = config('services.midtrans.isSanitized');
+        Config::$is3ds = config('services.midtrans.is3ds');
 
         // buat instance midtrans notificaton
         $notif = new Notification();
 
         // assign ke variable untuk memudahkan coding
         $status = $notif->transaction_status;
+        var_dump($status);
+        die;
         $type = $notif->payment_type;
         $fraud = $notif->fraud_status;
         $order_id = $notif->order_id;
